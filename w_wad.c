@@ -58,10 +58,10 @@ void**			lumpcache;
 
 
 #if defined(linux) || defined(__BEOS__) || defined(__SVR4)
-void strupr (char* s)
-{
-    while (*s) { *s = toupper(*s); s++; }
-}
+// void strupr (char* s)
+// {
+//     while (*s) { *s = toupper(*s); s++; }
+// }
 #endif
 
 int filelength (FILE *handle) 

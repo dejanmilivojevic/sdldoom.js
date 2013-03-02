@@ -43,9 +43,6 @@ rcsid[] = "$Id: m_bbox.c,v 1.1 1997/02/03 22:45:10 b1 Exp $";
 #include <netdb.h>
 #include <sys/ioctl.h>
 #include <byteorder.h>
-#ifndef IPPORT_USERRESERVED
-#define IPPORT_USERRESERVED	5000
-#endif
 #else
 #ifdef __WIN32__
 #define Win32_Winsock
@@ -69,7 +66,9 @@ rcsid[] = "$Id: m_bbox.c,v 1.1 1997/02/03 22:45:10 b1 Exp $";
 #include "i_net.h"
 
 
-
+#ifndef IPPORT_USERRESERVED
+#define IPPORT_USERRESERVED	5000
+#endif
 
 
 // For some odd reason...
