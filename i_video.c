@@ -165,7 +165,7 @@ void I_GetEvent(SDL_Event *Event)
 	D_PostEvent(&event);
 	break;
 
-#if (SDL_MAJOR_VERSION >= 0) && (SDL_MINOR_VERSION >= 9)
+
       case SDL_MOUSEMOTION:
 	/* Ignore mouse warp events */
 	if ((Event->motion.x != screen->w/2)||(Event->motion.y != screen->h/2))
@@ -184,7 +184,7 @@ void I_GetEvent(SDL_Event *Event)
 	    D_PostEvent(&event);
 	}
 	break;
-#endif
+
 
       case SDL_QUIT:
 	I_Quit();

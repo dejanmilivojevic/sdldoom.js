@@ -35,6 +35,7 @@ static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 #include <stdlib.h>
 
 extern int access(char *file, int mode);
+extern void postDisplay();
 
 #define R_OK	4
 #if 0
@@ -364,8 +365,9 @@ void D_Display (void)
 //
 extern  boolean         demorecording;
 
+
 void updateFrame (void)
-{
+{	
 	// frame syncronous IO operations
 	I_StartFrame ();                
 	
@@ -391,6 +393,7 @@ void updateFrame (void)
 
 	// Update display, next frame, with current state.
 	D_Display ();
+	postDisplay();
 }
 
 void D_DoomLoop (void)
@@ -408,7 +411,8 @@ void D_DoomLoop (void)
 	
     I_InitGraphics ();
 
-	emscripten_set_main_loop(updateFrame, 60, true);
+    //emscripten_set_main_loop(updateFrame, 60, true);
+    emscripten_set_main_loop(updateFrame, 0, true);
 }
 
 

@@ -50,10 +50,10 @@ rcsid[] = "$Id: i_unix.c,v 1.5 1997/02/03 22:45:10 b1 Exp $";
 
 
 // Needed for calling the actual sound output.
-static int SAMPLECOUNT=		512;
+static int SAMPLECOUNT=		1024;
 #define NUM_CHANNELS		8
 
-#define SAMPLERATE		11025	// Hz
+#define SAMPLERATE		22050	// Hz
 
 // The actual lengths of all sound effects.
 int 		lengths[NUMSFX];

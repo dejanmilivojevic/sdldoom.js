@@ -48,7 +48,12 @@ rcsid[] = "$Id: m_bbox.c,v 1.1 1997/02/03 22:45:10 b1 Exp $";
 #define Win32_Winsock
 #include <windows.h>
 #else
-#error You should hack this file for your BSD sockets layer
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <sys/ioctl.h>
 #endif
 #endif
 #endif
